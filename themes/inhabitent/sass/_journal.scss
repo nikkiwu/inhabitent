@@ -1,0 +1,65 @@
+.journal .post {
+  margin: $space-unit * 2 0;
+
+  .entry-header {
+    position: relative;
+    width: 100%;
+    min-height: 300px;
+
+    img {
+      width: 100%;
+    }
+
+    a {
+      display: inline;
+      text-decoration: none;
+      color: $text-color-light;
+
+      &:hover {
+        color: lighten($light-grey, 25);
+      }
+    }
+
+    .entry-title {
+      position: absolute;
+      top: 0;
+      left: 0;
+      background: $green;
+      width: 65%;
+      color: $text-color-light;
+      padding: 0 $space-unit;
+      font-size: $h2-size;
+    }
+
+    .entry-meta {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      background: $green;
+      margin-bottom: 8px;
+      text-transform: uppercase;
+      color: $text-color-light;
+      font-family: $font_family-heading;
+      padding: 0 $space-unit;
+    }
+  }
+
+  .entry-footer {
+    font-family: $font_family-heading;
+    text-transform: uppercase;
+
+    a {
+      text-decoration: none;
+    }
+
+    span {
+      display: inline-block;
+      padding-right: $space-unit;
+    }
+  }
+
+  .social-links {
+    padding-top: $space-unit;
+  }
+
+}

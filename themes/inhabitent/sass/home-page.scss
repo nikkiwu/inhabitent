@@ -1,0 +1,27 @@
+/* Home page */
+.home-page {
+  .journal-entry-container {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  h1 {
+    text-align: center;
+    font-weight: normal;
+    margin-top: $space-unit * 2;
+  }
+
+  .product-category-entry {
+    text-align: center;
+    padding: $space-unit;
+    border-top-width: 4px;
+
+    &:hover {
+      border-color: $orange;
+    }
+
+    img {
+      width: 80px;
+      height: 80px;
+    }
+  }
+}

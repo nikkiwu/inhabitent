@@ -1,8 +1,9 @@
 <?php
 /**
- * The template for displaying all pages.
+ * The template for displaying the About Page.
  *
  * @package Inhabitent_Theme
+ * Template Name: About Page Template.
  */
 get_header(); ?>
 
@@ -16,10 +17,6 @@ get_header(); ?>
             <?php endwhile; // End of the loop. ?>
 
         </main><!-- #main -->
-
-        <aside>
-            <?php get_sidebar(); ?>
-        </aside>
     </div><!-- #primary -->
 
 <?php get_footer(); ?>

@@ -1,0 +1,138 @@
+/* Page layout */
+
+.site {
+  display: flex;
+  flex-wrap: wrap;
+  min-height: 100vh;
+
+  .site-content {
+    width: 100vw;
+    margin-top: 50px;
+  }
+}
+
+main {
+
+}
+
+.container {
+  width: $site_width;
+  margin: auto;
+}
+
+.content-page {
+  display: flex;
+
+  main {
+    flex-basis: $site_width * .73;
+    padding-right: $space-unit * 2;
+    border-right: $border_solid;
+    padding-bottom: $space-unit * 2;
+  }
+}
+
+.hero-image {
+  margin-top: -50px;
+  height: 100vh;
+  max-width: 100vw;
+  min-width: $site_width;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: bottom;
+
+  .hero-heading {
+    color: $text-color-light;
+    font-size: 3rem;
+  }
+}
+
+.hero-home {
+  background-position: top;
+
+  .main-logo img {
+    width: 270px;
+    height: 270px;
+  }
+}
+
+.hero-adventures {
+  height: 140vh;
+}
+
+.page-header {
+  border-bottom: $border_dashed;
+}
+
+.entry-container {
+  display: grid;
+  grid-gap: 20px 20px;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  margin: $space-unit * 2 0;
+
+  .entry-post {
+    border: $border_solid;
+
+    .entry-thumbnail {
+      background: no-repeat center;
+      background-size: cover;
+      height: 250px;
+      border-bottom: 4px $border_solid;
+
+      a {
+        color: white;
+        display: block;
+        height: 250px;
+        min-width: 250px;
+      }
+    }
+
+    .entry-info {
+      padding: $space-unit / 2;
+
+      p {
+        font-size: .8rem;
+        margin-bottom: 0;
+      }
+
+      h2 {
+        margin-top: 0;
+        font-size: $h2-size * .7;
+
+        a {
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}
+
+.single-page-content {
+  width: $site_width * .75;
+  margin: auto;
+
+  h1 {
+    margin-top: $space-unit * 2;
+    margin-bottom: 0;
+  }
+
+  h2 {
+    text-align: center;
+  }
+
+  .post-author {
+    text-transform: uppercase;
+    font-family: $font_family-heading;
+    font-size: 1.2rem;
+  }
+}
+
+.day-of-the-week {
+  font-weight: bold;
+}
+
+iframe {
+  height: 300px;
+}

@@ -1,0 +1,73 @@
+/*--------------------------------------------------------------
+# Footer
+--------------------------------------------------------------*/
+
+.site-footer {
+  min-width: 1120px;
+  width: 100vw;
+  height: 350px;
+  background: url(../../source/images/dark-wood.png);
+  align-self: flex-end;
+  line-height: 1.5;
+
+  .site-info {
+    @include flex(flex, space-between, flex-start, row wrap);
+    margin: auto;
+    padding: $space-unit * 2 0 $space-unit 0;
+    height: 100%;
+    width: 1120px;
+    margin: auto;
+    color: $text-color-light;
+
+    .widget-container {
+      display: flex;
+      flex-basis: 50%;
+
+      .widget-area {
+        flex: 0 0 250px;
+        margin-right: $space-unit;
+
+        p {
+          font-size: 0.95rem;
+        }
+      }
+    }
+
+    .widget-title, h3 {
+      color: #d99054;
+      font-size: 1.2rem;
+      letter-spacing: .1rem;
+    }
+
+    .footer-logo {
+      flex: 0 0 280px;
+
+      img {
+        height: 60px;
+      }
+    }
+
+    .copyright {
+      font-family: $font_family-heading;
+      text-align: center;
+      flex-basis: 100%;
+      align-self: flex-end;
+      padding-top: $space-unit * 1.5;
+      text-transform: uppercase;
+    }
+  }
+
+  .fas, .fab {
+    display: inline-block;
+    margin-right: $space-unit / 3;
+  }
+
+  a, a:hover, a:visited, a:active, a:focus {
+    color: $text-color-light;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

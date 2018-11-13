@@ -15,7 +15,7 @@ html {
 }
 
 body {
-  background: $color__background-body; /* Fallback for when there is no custom background color defined. */
+  background: $white-background; /* Fallback for when there is no custom background color defined. */
 }
 
 blockquote,
@@ -29,15 +29,15 @@ q {
 }
 
 hr {
-  background-color: $color__background-hr;
+  background-color: $color_background-hr;
   border: 0;
   height: 1px;
-  margin-bottom: $base__space-unit;
+  margin-bottom: $space-unit;
 }
 
 ul,
 ol {
-  margin: 0 0 $base__space-unit ($base__space-unit * 2);
+  margin: 0 0 $space-unit ($space-unit * 2);
 }
 
 ul {
@@ -51,7 +51,7 @@ ol {
 li > ul,
 li > ol {
   margin-bottom: 0;
-  margin-left: $base__space-unit;
+  margin-left: $space-unit;
 }
 
 dt {
@@ -59,7 +59,7 @@ dt {
 }
 
 dd {
-  margin: 0 $base__space-unit $base__space-unit;
+  margin: 0 $space-unit $space-unit;
 }
 
 img {
@@ -68,6 +68,6 @@ img {
 }
 
 table {
-  margin: 0 0 $base__space-unit;
+  margin: 0 0 $space-unit;
   width: 100%;
 }
