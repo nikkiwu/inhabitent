@@ -1,0 +1,61 @@
+.site-header {
+  width: 100%;
+  background: $color__background-header;
+  border-bottom: $border_solid;
+  z-index: 100;
+  position: fixed;
+  overflow: hidden;
+
+  .header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: $site_width;
+    margin: auto;
+  }
+}
+
+/* Logo */
+
+.site-branding {
+  width: 50px;
+  height: 50px;
+  display: inline-block;
+
+  .site-logo {
+    background: url(../../source/logos/inhabitent-logo-tent.svg) center/50px no-repeat;
+    width: 50px;
+    height: 50px;
+
+    a {
+      display: block;
+      width: 50px;
+      height: 50px;
+    }
+  }
+}
+
+.header-inverse {
+  background: transparent;
+  border: 0;
+  position: absolute;
+
+  .site-logo {
+    background-image: url(../../source/logos/inhabitent-logo-tent-white.svg);
+  }
+
+  .search-field {
+    color: $text-color-light !important;
+  }
+
+  a {
+    color: $text-color-light;
+    text-shadow: 1px 1px 2px $text-color-main;
+
+    &:hover,
+    &:focus,
+    &:active {
+      color: $yellow !important;
+    }
+  }
+}

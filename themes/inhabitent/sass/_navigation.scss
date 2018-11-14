@@ -1,98 +1,45 @@
-/*--------------------------------------------------------------
-# Navigation
---------------------------------------------------------------*/
-
-/* Links */
-
-a {
-  color: $color_link;
-
-  &:visited {
-    color: $color_link-visited;
-  }
-  &:hover,
-  &:focus,
-  &:active {
-    color: $color_link-hover;
-  }
-  &:focus {
-    outline: thin dotted;
-  }
-  &:hover,
-  &:active {
-    outline: 0;
-  }
-}
-
-/* Menus */
+/* Main Nav */
 
 .main-navigation {
   clear: both;
-  display: block;
-  float: left;
+  @include flex(flex, space-around, flex-start, row wrap);
   width: 100%;
-
   ul {
-    display: none;
+    display: inline-block;
+    padding-left: 650px;
     list-style: none;
     margin: 0;
-    padding-left: 0;
-
-    ul {
-      box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
-      float: left;
-      position: absolute;
-      top: $space-unit;
-      left: -999rem;
-      z-index: 99999;
-
-      ul {
-        left: -999rem;
-        top: 0;
-      }
-
-      li {
-        &:hover > ul,
-        &.focus > ul {
-          left: 100%;
-        }
-      }
-
-      a {
-        width: 200px;
-      }
-
-      :hover > a,
-      .focus > a {
-      }
-
-      a:hover,
-      a.focus {
-      }
-    }
-
-    li:hover > ul,
-    li.focus > ul {
-      left: auto;
-    }
+    z-index: 99999;
+    top: 0;
   }
+
   li {
-    float: left;
-    position: relative;
-
-    &:hover > a,
-    &.focus > a {
+    &:hover > ul,
+    &.focus > ul {
+      left: 100%;
     }
   }
-  a {
-    display: block;
-    text-decoration: none;
-  }
 
-  .current_page_item > a,
-  .current-menu-item > a,
-  .current_page_ancestor > a {
+}
+
+li:hover > ul,
+li.focus > ul {
+  left: auto;
+}
+
+li {
+  margin: 10px;
+  display: inline-block;
+  position: relative;
+
+  &:hover > a,
+  &.focus > a {
   }
+}
+
+a {
+  display: block;
+  text-decoration: none;
 }
 
 /* Small menu. */
@@ -128,5 +75,27 @@ a {
     float: right;
     text-align: right;
     width: 50%;
+  }
+}
+
+/* Link Highlights */
+
+a {
+  color: $color_link;
+
+  &:visited {
+    color: $color_link-visited;
+  }
+  &:hover,
+  &:focus,
+  &:active {
+    color: $color_link-hover;
+  }
+  &:focus {
+    outline: thin dotted;
+  }
+  &:hover,
+  &:active {
+    outline: 0;
   }
 }

@@ -1,0 +1,42 @@
+
+.single-product-page {
+  @include flex(flex, null, flex-start, null);
+  margin: $space-unit 0;
+
+  .single-product-image, .single-product-content {
+    flex-basis: 50%;
+    padding: $space-unit;
+  }
+
+  .single-product-image {
+    img {
+      height: auto;
+    }
+  }
+
+  .single-product-content {
+    h1 {
+      text-transform: uppercase;
+      color: $orange;
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+
+    .single-product-price {
+      font-family: $font_family-heading;
+      font-size: 2rem;
+      margin-top: 0;
+    }
+  }
+}
+
+.social-links {
+  padding-bottom: $space-unit * 2;
+  &:hover {
+    cursor: pointer;
+  }
+  span {
+    display: inline-block;
+    padding-right: $space-unit / 2;
+  }
+}

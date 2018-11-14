@@ -2,59 +2,48 @@
 /**
  * The template for displaying all single products.
  *
- * @package RED_Starter_Theme
+ * @package Inhabitent_Theme
  */
-
 get_header(); ?>
 
-<div id="primary" class="content-area">
-    <main id="main" class="site-main" role="main">
+    <div id="primary" class="content-area container">
+        <main id="main" class="site-main single-product-page" role="main">
 
-        <?php while (have_posts()) : the_post(); ?>
+            <?php while (have_posts()) : the_post(); ?>
 
+                <?php
+                $image = CFS()->get('image');
+                $price = CFS()->get('price');
+                ?>
 
-            <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-                <header class="entry-header">
-                    <?php if (has_post_thumbnail()) : ?>
-                        <?php the_post_thumbnail('large'); ?>
-                    <?php endif; ?>
+                <div class="single-product-image">
+<!--                    --><?php //echo "<img src = $image />"; ?>
+                </div>
 
-                    <?php the_title('<h1 class="entry-title">', '</h1>'); ?>
+                <div class="single-product-content">
+                    <h1><?php the_title(); ?></h1>
 
-                    <div class="entry-meta">
-                        <?php red_starter_posted_on(); ?> / <?php red_starter_comment_count(); ?>
-                        / <?php red_starter_posted_by(); ?>
-                    </div><!-- .entry-meta -->
-                </header><!-- .entry-header -->
-                <?php echo CFS()->get('price'); ?>
-                <div class="entry-content">
-                    <?php the_content(); ?>
-                    <?php
-                    wp_link_pages(array(
-                        'before' => '<div class="page-links">' . esc_html('Pages:'),
-                        'after' => '</div>',
-                    ));
-                    ?>
-                </div><!-- .entry-content -->
+                    <?php echo "<p class = \"single-product-price\">\${$price}</p>"; ?>
+                    <p><?php the_content(); ?></p>
+                    <div class="social-links">
+                        <a class="btn inverse-btn"><span class="fab fa-facebook-f"></span>like</a>
+                        <a class="btn inverse-btn"><span class="fab fa-twitter"></span>tweet</a>
+                        <a class="btn inverse-btn"><span class="fab fa-pinterest"></span>pin</a>
+                    </div>
 
-                <footer class="entry-footer">
-                    <?php red_starter_entry_footer(); ?>
-                </footer><!-- .entry-footer -->
-            </article><!-- #post-## -->
+                </div>
 
-            <?php the_post_navigation(); ?>
+                <?php
+                // If comments are open or we have at least one comment, load up the comment template.
+                if (comments_open() || get_comments_number()) :
+                    comments_template();
+                endif;
+                ?>
 
-            <?php
-            // If comments are open or we have at least one comment, load up the comment template.
-            if (comments_open() || get_comments_number()) :
-                comments_template();
-            endif;
-            ?>
+            <?php endwhile; // End of the loop. ?>
 
-        <?php endwhile; // End of the loop. ?>
+        </main><!-- #main -->
 
-    </main><!-- #main -->
-</div><!-- #primary -->
+    </div><!-- #primary -->
 
-<?php get_sidebar(); ?>
 <?php get_footer(); ?>
