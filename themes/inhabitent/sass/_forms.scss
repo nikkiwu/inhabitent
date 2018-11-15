@@ -3,32 +3,70 @@
 --------------------------------------------------------------*/
 
 /* Buttons */
-
+/* Link buttons style */
+.btn,
 button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
-	border: 1px solid;
-	border-color: #ccc #ccc #bbb;
-	border-radius: 3px;
-	background: #e6e6e6;
-	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), inset 0 15px 17px rgba(255, 255, 255, 0.5), inset 0 -5px 12px rgba(0, 0, 0, 0.05);
-	color: rgba(0, 0, 0, .8);
-	@include font-size(0.75);
-	line-height: 1;
-	padding: .6rem 1rem .4rem;
-	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
+  border: 0;
+  display: inline-block;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-family: $font_family-heading;
+  font-size: .9rem;
+  padding: $space-unit/4 $space-unit;
+  background: $green;
+  color: $text-color-light !important;
 
-	&:hover {
-		border-color: #ccc #bbb #aaa;
-		box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8), inset 0 15px 17px rgba(255, 255, 255, 0.8), inset 0 -5px 12px rgba(0, 0, 0, 0.02);
-	}
+  &:hover,
+  &:focus,
+  &:active {
+    color: $text-color-light !important;
+    background: darken($green, 10);
+  }
+}
 
-	&:active,
-	&:focus {
-		border-color: #aaa #bbb #bbb;
-		box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.5), inset 0 2px 5px rgba(0, 0, 0, 0.15);
-	}
+.shop-btn {
+  text-align: center;
+  margin: auto;
+}
+
+.inverse-btn {
+  border: 1px solid $text-color-main;
+  color: $text-color-main !important;
+  background: $white-background;
+
+  &:hover,
+  &:focus,
+  &:active {
+    background: $green;
+    color: $text-color-light !important;
+    border-color: $green;
+  }
+}
+
+.adventures-btn {
+  margin: $space-unit 0;
+  font-size: 1.1rem;
+}
+
+.transparent-btn {
+  background: transparent;
+  border: 1px solid $text-color-light;
+
+  &:hover,
+  &:focus,
+  &:active {
+    background: $green;
+    border-color: $green;
+  }
+}
+
+.read-more {
+  &::after {
+    content: " \2192";
+  }
 }
 
 /* Fields */
@@ -39,13 +77,14 @@ input[type="url"],
 input[type="password"],
 input[type="search"],
 textarea {
-	color: #666;
-	border: 1px solid #ccc;
-	border-radius: 3px;
+  border: $border_solid;
+  font-family: $font_family-default;
+  background: lighten($light-grey, 30);
+  outline: 0;
 
-	&:focus {
-		color: #111;
-	}
+  &:focus {
+    color: #111;
+  }
 }
 
 input[type="text"],
@@ -53,10 +92,37 @@ input[type="email"],
 input[type="url"],
 input[type="password"],
 input[type="search"] {
-	padding: 3px;
+  padding: 3px;
 }
 
 textarea {
-	padding-left: 3px;
-	width: 100%;
+  padding-left: 3px;
+  width: 80%;
+  resize: none;
+}
+
+label {
+  font-family: $font_family-heading;
+  text-transform: uppercase;
+}
+
+.required {
+  color: $orange;
+}
+
+.wpcf7-not-valid-tip {
+  text-transform: none;
+  font-family: $font_family-default;
+}
+
+.search-form {
+  fieldset {
+    border: 0;
+    padding-left: 0;
+    margin-left: 0;
+
+    .search-submit {
+      display: none;
+    }
+  }
 }

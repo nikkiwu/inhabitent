@@ -39,7 +39,6 @@ function filter_login_headerurl($login_header_url)
 add_filter('login_headerurl', 'filter_login_headerurl', 10, 1);
 
 
-
 // Custom Background
 function custom_login()
 {
@@ -47,8 +46,6 @@ function custom_login()
 }
 
 add_action('login_head', 'custom_login');
-
-
 
 
 // Custom Logo
@@ -61,6 +58,48 @@ function inhabitent_login_logo()
 }
 
 add_action('login_head', 'inhabitent_login_logo');
+
+
+/*
+ * Custom Hero Image for the About Page
+ */
+
+function inhabitent_dynamic_css()
+{
+    if (!is_page_template('about.php')) {
+        return;
+    }
+
+    $image = CFS()->get('about_header_image');
+
+    if (!$image) {
+        $hero_css = ".page-template-about .entry-header {
+            background: grey;
+            color: white;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }";
+    } else {
+        $hero_css = ".page-template-about .entry-header {
+            background: grey;
+            background: linear-gradient(to bottom, rgba(0,0,0, 0.4) 0%, rgba(0,0,0, 0.4) 100%), url({$image}) no-repeat center bottom;
+            background-size: cover; 
+            width: 100%;
+            color: white;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }";
+
+    }
+    wp_add_inline_style('inhabitent-style', $hero_css);
+}
+
+
+add_action('wp_enqueue_scripts', 'inhabitent_dynamic_css');
 
 
 

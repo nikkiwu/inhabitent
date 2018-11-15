@@ -352,39 +352,63 @@ table {
 # Forms
 --------------------------------------------------------------*/
 /* Buttons */
+/* Link buttons style */
+.btn,
 button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
-  border: 1px solid;
-  border-color: #ccc #ccc #bbb;
-  border-radius: 3px;
-  background: #e6e6e6;
-  -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), inset 0 15px 17px rgba(255, 255, 255, 0.5), inset 0 -5px 12px rgba(0, 0, 0, 0.05);
-          box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), inset 0 15px 17px rgba(255, 255, 255, 0.5), inset 0 -5px 12px rgba(0, 0, 0, 0.05);
-  color: rgba(0, 0, 0, 0.8);
-  font-size: 12px;
-  font-size: 0.75rem;
-  line-height: 1;
-  padding: .6rem 1rem .4rem;
-  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8); }
+  border: 0;
+  display: inline-block;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-family: Novecento, sans-serif;
+  font-size: .9rem;
+  padding: 0.375rem 1.5rem;
+  background: #248A83;
+  color: #fff !important; }
+  .btn:hover, .btn:focus, .btn:active,
   button:hover,
+  button:focus,
+  button:active,
   input[type="button"]:hover,
-  input[type="reset"]:hover,
-  input[type="submit"]:hover {
-    border-color: #ccc #bbb #aaa;
-    -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8), inset 0 15px 17px rgba(255, 255, 255, 0.8), inset 0 -5px 12px rgba(0, 0, 0, 0.02);
-            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8), inset 0 15px 17px rgba(255, 255, 255, 0.8), inset 0 -5px 12px rgba(0, 0, 0, 0.02); }
-  button:active, button:focus,
-  input[type="button"]:active,
   input[type="button"]:focus,
-  input[type="reset"]:active,
+  input[type="button"]:active,
+  input[type="reset"]:hover,
   input[type="reset"]:focus,
-  input[type="submit"]:active,
-  input[type="submit"]:focus {
-    border-color: #aaa #bbb #bbb;
-    -webkit-box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.5), inset 0 2px 5px rgba(0, 0, 0, 0.15);
-            box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.5), inset 0 2px 5px rgba(0, 0, 0, 0.15); }
+  input[type="reset"]:active,
+  input[type="submit"]:hover,
+  input[type="submit"]:focus,
+  input[type="submit"]:active {
+    color: #fff !important;
+    background: #19625d; }
+
+.shop-btn {
+  text-align: center;
+  margin: auto; }
+
+.inverse-btn {
+  border: 1px solid #404040;
+  color: #404040 !important;
+  background: #fff; }
+  .inverse-btn:hover, .inverse-btn:focus, .inverse-btn:active {
+    background: #248A83;
+    color: #fff !important;
+    border-color: #248A83; }
+
+.adventures-btn {
+  margin: 1.5rem 0;
+  font-size: 1.1rem; }
+
+.transparent-btn {
+  background: transparent;
+  border: 1px solid #fff; }
+  .transparent-btn:hover, .transparent-btn:focus, .transparent-btn:active {
+    background: #248A83;
+    border-color: #248A83; }
+
+.read-more::after {
+  content: " \2192"; }
 
 /* Fields */
 input[type="text"],
@@ -393,9 +417,10 @@ input[type="url"],
 input[type="password"],
 input[type="search"],
 textarea {
-  color: #666;
-  border: 1px solid #ccc;
-  border-radius: 3px; }
+  border: 1px solid #e1e1e1;
+  font-family: Merriweather, serif;
+  background: #eeeeee;
+  outline: 0; }
   input[type="text"]:focus,
   input[type="email"]:focus,
   input[type="url"]:focus,
@@ -413,47 +438,112 @@ input[type="search"] {
 
 textarea {
   padding-left: 3px;
-  width: 100%; }
+  width: 80%;
+  resize: none; }
 
-/* Main Nav */
+label {
+  font-family: Novecento, sans-serif;
+  text-transform: uppercase; }
+
+.required {
+  color: #d99054; }
+
+.wpcf7-not-valid-tip {
+  text-transform: none;
+  font-family: Merriweather, serif; }
+
+.search-form fieldset {
+  border: 0;
+  padding-left: 0;
+  margin-left: 0; }
+  .search-form fieldset .search-submit {
+    display: none; }
+
+/*--------------------------------------------------------------
+# Navigation
+--------------------------------------------------------------*/
+/* Links */
+a {
+  color: #248A83; }
+  a:visited {
+    color: #248A83; }
+  a:hover, a:focus, a:active {
+    color: #2f1339; }
+  a:focus {
+    outline: thin dotted; }
+  a:hover, a:active {
+    outline: 0; }
+
+/* Menus */
 .main-navigation {
   clear: both;
+  display: block;
+  width: auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: row wrap;
-          flex-flow: row wrap;
-  width: 100%; }
+  -ms-flex-line-pack: center;
+      align-content: center; }
   .main-navigation ul {
-    display: inline-block;
-    padding-left: 650px;
+    display: none;
     list-style: none;
     margin: 0;
-    z-index: 99999;
-    top: 0; }
-  .main-navigation li:hover > ul,
-  .main-navigation li.focus > ul {
-    left: 100%; }
+    padding-left: 0; }
+    .main-navigation ul ul {
+      -webkit-box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+              box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+      float: left;
+      position: absolute;
+      top: 1.5rem;
+      left: -999rem;
+      z-index: 99999; }
+      .main-navigation ul ul ul {
+        left: -999rem;
+        top: 0; }
+      .main-navigation ul ul li:hover > ul,
+      .main-navigation ul ul li.focus > ul {
+        left: 100%; }
+      .main-navigation ul ul a {
+        width: 200px; }
+    .main-navigation ul li:hover > ul,
+    .main-navigation ul li.focus > ul {
+      left: auto; }
+  .main-navigation li {
+    float: left;
+    position: relative;
+    font-family: Novecento, sans-serif;
+    text-transform: uppercase;
+    padding: 0 0.75rem; }
+  .main-navigation a {
+    display: block;
+    text-decoration: none; }
+  .main-navigation .search-button {
+    display: inline;
+    margin-left: 0.75rem;
+    cursor: pointer; }
+  .main-navigation .search-form {
+    display: none; }
+    .main-navigation .search-form, .main-navigation .search-form fieldset, .main-navigation .search-form label {
+      margin: 0;
+      padding: 0;
+      height: 1.75rem;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex; }
+    .main-navigation .search-form .search-field {
+      margin-left: 0.75rem;
+      background: transparent;
+      text-transform: uppercase;
+      border: 0;
+      color: #404040;
+      font-family: Novecento, sans-serif; }
 
-li:hover > ul,
-li.focus > ul {
-  left: auto; }
-
-li {
-  margin: 10px;
-  display: inline-block;
-  position: relative; }
-
-a {
-  display: block;
-  text-decoration: none; }
+.menu-main-menu-container, .menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-line-pack: end;
+      align-content: flex-end; }
 
 /* Small menu. */
 .menu-toggle,
@@ -484,18 +574,6 @@ a {
   float: right;
   text-align: right;
   width: 50%; }
-
-/* Link Highlights */
-a {
-  color: #248A83; }
-  a:visited {
-    color: #248A83; }
-  a:hover, a:focus, a:active {
-    color: #2f1339; }
-  a:focus {
-    outline: thin dotted; }
-  a:hover, a:active {
-    outline: 0; }
 
 .widget {
   margin: 0 0 1.5rem;
@@ -745,7 +823,6 @@ object {
           flex-basis: 100%;
       -ms-flex-item-align: end;
           align-self: flex-end;
-      padding-top: 2.25rem;
       text-transform: uppercase; }
   .site-footer .fas, .site-footer .fab {
     display: inline-block;
@@ -910,14 +987,14 @@ iframe {
 .page-title, .screen-reader-text {
   display: none; }
 
-/* Home page */
 .home-page .journal-entry-container {
   grid-template-columns: 1fr 1fr 1fr; }
 
 .home-page h1 {
   text-align: center;
   font-weight: normal;
-  margin-top: 3rem; }
+  margin-top: 3rem;
+  text-transform: uppercase; }
 
 .home-page .product-category-entry {
   text-align: center;
@@ -928,6 +1005,11 @@ iframe {
   .home-page .product-category-entry img {
     width: 80px;
     height: 80px; }
+
+.hero-image, .hero-home {
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.4)), to(rgba(0, 0, 0, 0.4))), url("../../source/images/home-hero.jpg") no-repeat center;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.4) 100%), url("../../source/images/home-hero.jpg") no-repeat center;
+  background-size: cover; }
 
 .single-product-page {
   display: -webkit-box;
