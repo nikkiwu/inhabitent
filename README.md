@@ -12,7 +12,7 @@ This is a recreation of a WordPress Site made by REDAcademy. Created to display 
 * Nikki Wu 
 
 ## Used
-* [RED Starter Theme
+* RED Starter Theme
 * RED Widget Boilerplate
 
 ## Technologies used
