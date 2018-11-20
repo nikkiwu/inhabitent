@@ -1,6 +1,9 @@
 .home-page {
+
   .journal-entry-container {
     grid-template-columns: 1fr 1fr 1fr;
+    width: 1120px;
+    margin: auto;
   }
 
   h1 {
@@ -14,21 +17,19 @@
     text-align: center;
     padding: $space-unit;
     border-top-width: 4px;
+    img {
+      height: 70px;
+      width: 70px;
+    }
 
     &:hover {
       border-color: $orange;
     }
 
-    img {
-      width: 80px;
-      height: 80px;
-    }
   }
 }
 
-
-
-.hero-image, .hero-home{
-  background:linear-gradient(to bottom, rgba(0,0,0, 0.4) 0%, rgba(0,0,0, 0.4) 100%), url("../../source/images/home-hero.jpg") no-repeat center;
+.hero-image, .hero-home {
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.4) 100%), url("../../source/images/home-hero.jpg") no-repeat center;
   background-size: cover;
 }

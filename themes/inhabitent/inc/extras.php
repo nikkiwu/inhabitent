@@ -92,6 +92,7 @@ function inhabitent_dynamic_css()
             display: flex;
             justify-content: center;
             align-items: center;
+            margin-top: -50px;
         }";
 
     }
@@ -101,6 +102,55 @@ function inhabitent_dynamic_css()
 
 add_action('wp_enqueue_scripts', 'inhabitent_dynamic_css');
 
+
+function inhabitent_excerpt_more($more)
+{
+    global $post;
+    return ' <br> <br> <a class="btn inverse-btn read-more" href="' . get_permalink($post->ID) . '"> Read more</a>';
+}
+
+add_filter('excerpt_more', 'inhabitent_excerpt_more');
+
+
+function add_search_button($items)
+{
+    $items .= '<a class = "search-button"><span class = "fas fa-search"></span></a>';
+    return $items;
+}
+
+add_filter('wp_nav_menu_items', 'add_search_button');
+
+
+function inhabitent_archive_title($title)
+{
+    if (is_post_type_archive('product')) {
+        $title = 'shop stuff';
+    } else if (is_tax('product_type')) {
+        $title = sprintf('%1$s', single_term_title('', false));
+    }
+
+    return $title;
+
+}
+
+
+add_filter('get_the_archive_title', 'inhabitent_archive_title');
+
+
+function inhabitent_mod_post_type_archive($query)
+{
+    if (
+        (is_post_type_archive(array("product")) || $query->is_tax("product_type"))
+        && !is_admin()
+        && $query->is_main_query()
+    ) {
+        $query->set("orderby", "title");
+        $query->set("order", "ASC");
+        $query->set("posts_per_page", 16);
+    }
+}
+
+add_action("pre_get_posts", "inhabitent_mod_post_type_archive");
 
 
 

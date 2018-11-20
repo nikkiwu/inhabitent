@@ -1,0 +1,138 @@
+.home {
+
+  .adventure h2 {
+    display: flex;
+    justify-content: center;
+    font-size: 2.4rem;
+    font-weight: 400;
+    margin-bottom: 3.75rem;
+    color: #2f1339;
+    text-transform: uppercase;
+  }
+
+  .adventure {
+    width: 1120px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .adventure li:first-child {
+    grid-column: 1/span 2;
+    grid-row: 1/span 2;
+  }
+
+  .adventure li:nth-child(2) {
+    grid-column: 3/span 2;
+    grid-row: 1/span 1;
+
+  }
+
+  .adventure img {
+    left: 50%;
+    max-height: 620px;
+    max-width: none;
+    position: absolute;
+    top: 75%;
+    transform: translate(-50%, -75%);
+    width: auto;
+  }
+
+  .adventure ul {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: 2fr;
+    grid-gap: 20px 20px;
+    list-style-type: none;
+    margin-left: 0;
+    padding-left: 0;
+    width: 100%;
+    height: 550px;
+  }
+
+  .adventure li {
+    filter: brightness(50%);
+    line-height: 1;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+  }
+
+  .adventure-time {
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 1;
+  }
+
+  .adventure-text {
+    margin: 1.5rem;
+    position: absolute;
+    z-index: 2;
+    color: $color_background;
+    font-size: 2.4rem;
+    font-family: Merriweather, serif;
+    font-weight: 400;
+  }
+
+  .canoe img {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.4) 100%);
+    left: 50%;
+    max-height: 620px;
+    max-width: none;
+    position: absolute;
+    top: 75%;
+    transform: translate(-50%, -75%);
+    width: auto;
+  }
+
+  .night img {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.4) 100%);
+    left: 50%;
+    max-height: 620px;
+    max-width: none;
+    position: absolute;
+    top: 75%;
+    transform: translate(-50%, -75%);
+    width: auto;
+  }
+
+  .mountain {
+
+    img {
+      background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.4) 100%);
+      top: 50%;
+      left: 30%;
+    }
+
+    h3 {
+      font-size: 1.6rem;
+    }
+
+  }
+
+  .stars {
+
+    img {
+      background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.4) 100%);
+      top: 60%;
+    }
+
+    h3 {
+      font-size: 1.6rem;
+    }
+  }
+
+  .adventure-button {
+    position: absolute;
+    top: 170px;
+    left: 50px;
+    border: 1px solid $color_background;
+    color: $color_background;
+    padding: .75rem 1.5rem;
+    cursor: pointer;
+    text-transform: uppercase;
+    text-decoration: none;
+  }
+}

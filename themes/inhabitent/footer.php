@@ -27,10 +27,29 @@
                 </p>
             </div>
 
+            <div class="footer-block-item">
+                <div class="business-hours">
+                    <h3>Business Hours</h3>
+                    <p>
+                        <span class="day-of-week">Monday-Friday:</span>
+                        9am to 5pm
+                    </p>
+                    <p>
+                        <span class="day-of-week">Saturday:</span>
+                        10am to 2pm
+                    </p>
+                    <p>
+                        <span class="day-of-week">Sunday:</span>
+                        Closed
+                    </p>
+                </div>
+                <div class="footer-block-item"></div>
+            </div>
+
         </div>
 
         <div class="footer-logo">
-            <a href="/inhabitent" rel="home">
+            <a href="/inhabitent/wordpress" rel="home">
                 <img src= <?php echo esc_url(get_template_directory_uri()) . "/source/logos/inhabitent-logo-text.svg"; ?> alt="Inhabitent
                      Logo Text"/>
             </a>
@@ -40,7 +59,11 @@
 </footer><!-- #colophon -->
 </div><!-- #page -->
 
+
 <?php wp_footer(); ?>
 
 </body>
 </html>
+
+
+

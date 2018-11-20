@@ -1,3 +1,14 @@
 /*--------------------------------------------------------------
 # Embedded Fonts
 --------------------------------------------------------------*/
+
+@font-face {
+  font-family: "Merriweather";
+  src: url("../../font/Merriweather/Merriweather-Light.eot");
+  src: url("../../font/Merriweather/Merriweather-Light.eot?#iefix") format("embedded-opentype"),
+  url("../../font/Merriweather/Merriweather-Light.woff") format("woff"),
+  url("../../font/Merriweather/Merriweather-Light.ttf") format("truetype"),
+  url("../../font/Merriweather/Merriweather-Light.svg#merriweather") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}

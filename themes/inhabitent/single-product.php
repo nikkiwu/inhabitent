@@ -17,7 +17,9 @@ get_header(); ?>
                 ?>
 
                 <div class="single-product-image">
-<!--                    --><?php //echo "<img src = $image />"; ?>
+                    <?php if (has_post_thumbnail()) : ?>
+                        <?php the_post_thumbnail('large'); ?>
+                    <?php endif; ?>
                 </div>
 
                 <div class="single-product-content">

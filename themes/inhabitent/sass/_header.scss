@@ -1,7 +1,9 @@
+/*--------------------------------------------------------------
+# Header
+--------------------------------------------------------------*/
+
 .site-header {
   width: 100%;
-  background: $color__background-header;
-  border-bottom: $border_solid;
   z-index: 100;
   position: fixed;
   overflow: hidden;
@@ -22,11 +24,9 @@
   height: 50px;
   display: inline-block;
 
-  .site-logo {
-    background: url(../../source/logos/inhabitent-logo-tent.svg) center/50px no-repeat;
+  .logo-white {
     width: 50px;
     height: 50px;
-
     a {
       display: block;
       width: 50px;
@@ -35,27 +35,55 @@
   }
 }
 
-.header-inverse {
-  background: transparent;
-  border: 0;
-  position: absolute;
+.site-branding {
+  width: 50px;
+  height: 50px;
+  display: inline-block;
 
-  .site-logo {
-    background-image: url(../../source/logos/inhabitent-logo-tent-white.svg);
-  }
+  .logo-green {
+    width: 50px;
+    height: 50px;
+    display: none;
 
-  .search-field {
-    color: $text-color-light !important;
-  }
-
-  a {
-    color: $text-color-light;
-    text-shadow: 1px 1px 2px $text-color-main;
-
-    &:hover,
-    &:focus,
-    &:active {
-      color: $yellow !important;
+    a {
+      color: $green;
+      display: block;
+      width: 50px;
+      height: 50px;
     }
+  }
+}
+
+.blog, .logged-in, .admin-bar, .debug-bar-maximized, .customize-support {
+  .site-header a {
+    color: $green;
+  }
+  .logo-green {
+    display: inline-block;
+  }
+  .logo-white {
+    display: none;
+  }
+}
+
+.search-field {
+  display: none;
+}
+
+.search-show {
+  display: inline-block;
+  transition: 1s linear;
+}
+
+
+.page-template{
+  .site-header a{
+    color: white;
+  }
+  .logo-green{
+    display: none;
+  }
+  .logo-white{
+    display: inline-block;
   }
 }

@@ -51,40 +51,81 @@ get_header(); ?>
         </section><!-- product-info-container -->
 
 
-        <h1>inhabitent journal</h1>
         <?php
 
-
-        /*
-         * Get the blog journal entries
-         */
-
-        $args = array('post_type' => 'post', 'order' => 'ASC', 'posts_per_page' => 3);
+        $args = array('post_type' => 'post', 'order' => 'DES', 'posts_per_page' => 3);
         $journal_posts = get_posts($args); // returns an array of posts
         ?>
-        <?php foreach ($journal_posts as $post) : setup_postdata($post); ?>
-            <article class="entry-container journal-entry-container">
-                <?php
-                the_post_thumbnail('medium');
 
-                ?>
-                <span class="entry-meta">
-                <?php
-                red_starter_posted_on();
-                echo ' / ';
-                comments_number('0 Comments', '1 Comment', '% Comments');
-                ?>
-            </span>
-                <a href="<?php echo get_the_permalink(); ?>">
-                    <?php the_title(); ?>
-                </a>
-                <a class="read-more" href="<?php echo get_the_permalink(); ?>">
-                    Read More
+        <h1>inhabitent journal</h1>
+        <section class="entry-container journal-entry-container">
+            <?php foreach ($journal_posts
 
-                </a>
-            </article>
-        <?php endforeach;
-        wp_reset_postdata(); ?>
+                           as $post) :
+                setup_postdata($post); ?>
+                <div class="entry-post journal-post">
+                    <div class="entry-thumbnail" style="background-image: url(<?php the_post_thumbnail_url(); ?>) ">
+                    </div>
+                    <div class="entry-info">
+                        <p>
+                            <?php
+                            the_date();
+                            echo " / ";
+                            comments_number('0 Comments');
+                            ?>
+                        </p>
+                        <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+                        <a href="<?php the_permalink(); ?>" class="btn inverse-btn">Read entry</a>
+                    </div>
+                </div>
+            <?php endforeach;
+            wp_reset_postdata(); ?>
+        </section>
+        <section class="adventure">
+            <h2>latest adventures</h2>
+            <ul>
+                <li class="canoe">
+                    <div class="adventure-thumbnail">
+                        <img src="<?php echo get_template_directory_uri(); ?>/source/images/adventure-photos/canoe-girl.jpg"
+                             alt="canoe"/>
+                    </div>
+                    <div class="adventure-time">
+                        <h3 class="adventure-text">Getting Back to Nature in a Canoe</h3>
+                    </div>
+                    <a class="adventure-button" href="readmore">Read More</a>
+                </li>
+                <li class="night">
+                    <div class="adventure-thumbnail">
+                        <img src="<?php echo get_template_directory_uri(); ?>/source/images/adventure-photos/beach-bonfire.jpg"
+                             alt="beach"/>
+                    </div>
+                    <div class="adventure-time">
+                        <h3 class="adventure-text">A Night with Friends at the Beach</h3>
+                    </div>
+                    <a class="adventure-button" href="readmore">Read More</a>
+                </li>
+                <li class="mountain">
+                    <div class="adventure-thumbnail">
+                        <img src="<?php echo get_template_directory_uri(); ?>/source/images/adventure-photos/mountain-hikers.jpg"
+                             alt="hikers"/>
+                    </div>
+                    <div class="adventure-time">
+                        <h3 class="adventure-text">Taking in the View at Big Mountain</h3>
+                    </div>
+                    <a class="adventure-button" href="readmore">Read More</a>
+                </li>
+                <li class="stars">
+                    <div class="adventure-thumbnail">
+                        <img src="<?php echo get_template_directory_uri(); ?>/source/images/adventure-photos/night-sky.jpg"
+                             alt="stars"/>
+                    </div>
+                    <div class="adventure-time">
+                        <h3 class="adventure-text">Star-Gazing at the Night Sky</h3>
+                    </div>
+                    <a class="adventure-button" href="readmore">Read More</a>
+                </li>
+            </ul>
+        </section>
 
     </main><!-- #main -->
 </div><!-- #primary -->

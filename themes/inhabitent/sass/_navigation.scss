@@ -7,9 +7,6 @@
 a {
   color: $color_link;
 
-  &:visited {
-    color: $color_link-visited;
-  }
   &:hover,
   &:focus,
   &:active {
@@ -99,7 +96,7 @@ a {
 
     .search-field {
       margin-left: $space-unit / 2;
-      background: transparent;
+      background: $light-grey;
       text-transform: uppercase;
       border: 0;
       color: $text-color-main;
@@ -112,7 +109,6 @@ a {
   display: flex;
   align-content: flex-end;
 }
-
 
 /* Small menu. */
 .menu-toggle,
@@ -148,4 +144,8 @@ a {
     text-align: right;
     width: 50%;
   }
+}
+
+.fas fa-search {
+  color: white;
 }
