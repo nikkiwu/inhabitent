@@ -22,7 +22,6 @@ get_header(); ?>
 
                 <?php endwhile; ?>
 
-                <?php inhabitent_numbered_pagination(); ?>
 
             <?php else : ?>
 

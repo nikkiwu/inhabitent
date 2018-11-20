@@ -4,52 +4,74 @@
  *
  * @link https://codex.wordpress.org/Creating_an_Error_404_Page
  *
- * @package RED_Starter_Theme
+ * @package Inhabitent_Theme
  */
-
 get_header(); ?>
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+    <div id="primary" class="content-area content-page container">
+        <main id="main" class="site-main" role="main">
 
-			<section class="error-404 not-found">
-				<header class="page-header">
-					<h1 class="page-title"><?php echo esc_html( 'Oops! That page can&rsquo;t be found.' ); ?></h1>
-				</header><!-- .page-header -->
+            <section class="error-404 not-found">
+                <header class="page-header">
+                    <h1 class="page-title">Oops! That page can&rsquo;t be found.</h1>
+                </header><!-- .page-header -->
 
-				<div class="page-content">
-					<p><?php echo esc_html( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?' ); ?></p>
+                <div class="page-content">
+                    <p>It looks like nothing was found at this location. Maybe try one of the links below or a
+                        search?</p>
 
-					<?php get_search_form(); ?>
+                    <?php get_search_form(); ?>
 
-					<?php the_widget( 'WP_Widget_Recent_Posts' ); ?>
+                    <h2>Recent posts</h2>
+                    <ul class="recent-post-list">
+                        <?php $posts_query = new WP_Query('posts_per_page=5');
+                        while ($posts_query->have_posts()) : $posts_query->the_post();
+                            ?>
+                            <li><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
+                        <?php endwhile;
+                        wp_reset_query(); ?>
+                    </ul>
 
-					<?php if ( red_starter_categorized_blog() ) : // Only show the widget if site has multiple categories. ?>
-					<div class="widget widget_categories">
-						<h2 class="widget-title"><?php echo esc_html( 'Most Used Categories' ); ?></h2>
-						<ul>
-						<?php
-							wp_list_categories( array(
-								'orderby'    => 'count',
-								'order'      => 'DESC',
-								'show_count' => 1,
-								'title_li'   => '',
-								'number'     => 10,
-							) );
-						?>
-						</ul>
-					</div><!-- .widget -->
-					<?php endif; ?>
+                    <h2>Most used categories</h2>
+                    <?php
+                    $args = array(
+                        'number' => 4,
+                        'orderby' => 'count',
+                        'order' => 'DESC',
+                        'show_count' => 1,
+                        'title_li' => 0,
+                    );
+                    ?>
+                    <ul class="recent-post-list">
+                        <?php wp_list_categories($args); ?>
+                    </ul>
+                    <h2>Archives</h2>
+                    <p>Try looking in the monthly archives. &#x1F642;</p>
+                    <?php $args = array(
+                        'type' => 'monthly',
+                        'limit' => '',
+                        'format' => 'option',
+                        'before' => '',
+                        'after' => '',
+                        'show_post_count' => false,
+                        'echo' => 1,
+                        'order' => 'DESC',
+                        'post_type' => 'post'
+                    ); ?>
 
-					<?php
-						$archive_content = '<p>' . sprintf( esc_html( 'Try looking in the monthly archives. %1$s' ), convert_smilies( ':)' ) ) . '</p>';
-						the_widget( 'WP_Widget_Archives', 'dropdown=1', "after_title=</h2>$archive_content" );
-					?>
+                    <select class="archive-select">
+                        <option value="" selected disabled> Select Month</option>
+                        <?php wp_get_archives($args); ?>
+                    </select>
 
-				</div><!-- .page-content -->
-			</section><!-- .error-404 -->
+                </div><!-- .page-content -->
+            </section><!-- .error-404 -->
 
-		</main><!-- #main -->
-	</div><!-- #primary -->
+        </main><!-- #main -->
+
+        <aside>
+            <?php get_sidebar(); ?>
+        </aside>
+    </div><!-- #primary -->
 
 <?php get_footer(); ?>

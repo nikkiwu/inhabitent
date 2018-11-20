@@ -2,68 +2,42 @@
 /**
  * The template for displaying archive pages.
  *
- * @package RED_Starter_Theme
+ * @package Inhabitent_Theme
  */
 get_header(); ?>
 
-<div id="primary" class="content-area">
+    <div id="primary" class="content-area content-page container">
+        <main id="main" class="site-main journal" role="main">
 
-    <main id="main" class="site-main" role="main">
+            <?php if (have_posts()) : ?>
 
-        <!-- Product terms -->
-        <header id="primary" class="entry-header products-heading">
-            <h1>SHOP STUFF</h1>
-            <?php
-            $terms = get_terms(array(
-                'taxonomy' => 'product_type',
-                'hide_empty' => 0,
-            ));
-            if (!empty($terms)) :
-                ?>
+                <header class="page-header">
+                    <?php
+                    the_archive_title('<h1 class="page-title">', '</h1>');
+                    the_archive_description('<div class="taxonomy-description">', '</div>');
+                    ?>
+                </header><!-- .page-header -->
 
-                <ul class="main-navigation products-navigation">
-                    <?php foreach ($terms as $term) : ?>
+                <?php /* Start the Loop */ ?>
+                <?php while (have_posts()) : the_post(); ?>
 
-                        <li>
-                            <p>
-                                <a href="<?php echo get_term_link($term); ?>"><?php echo $term->name; ?></a>
-                            </p>
-                        </li>
+                    <?php get_template_part('template-parts/content'); ?>
 
-                    <?php endforeach; ?>
+                <?php endwhile; ?>
 
-                </ul>
+                <?php the_posts_navigation(); ?>
+
+            <?php else : ?>
+
+                <?php get_template_part('template-parts/content', 'none'); ?>
 
             <?php endif; ?>
 
-        </header>
+        </main><!-- #main -->
 
+        <aside>
+            <?php get_sidebar(); ?>
+        </aside>
+    </div><!-- #primary -->
 
-        <?php /* Start the Loop */ ?>
-        <div class="entry-container">
-            <?php while (have_posts()) :
-                the_post(); ?>
-
-                <div class="entry-post" id="post-<?php the_ID(); ?>" <?php post_class(); ?> >
-                    <div class="entry-thumbnail"
-                         style="background-image: url(<?php the_post_thumbnail_url(); ?>) ">
-                        <a href= <?php the_permalink(); ?>></a>
-
-                    </div>
-
-                    <div class="entry-info product-info">
-                        <span><?php the_title(); ?></span>
-                        <span class="aligncenter">&nbsp;</span>
-                        <span><?php echo "\$" . CFS()->get('price'); ?></span>
-                    </div>
-
-                </div><!-- #post-## -->
-
-            <?php endwhile; ?>
-
-
-        </div> <!--page-articles-products-->
-
-    </main><!-- #main -->
-</div><!-- #primary -->
 <?php get_footer(); ?>
