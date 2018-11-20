@@ -1,7 +1,6 @@
 # Project 4 Inhabitent Wordpress site
 
-![Inhabitent Screenshot](screenshot/inhabitent.png "This is a screenshot of the Inhabitent theme")
-
+![Inhabitent Screenshot](inhabitent.png)
 
 
 This is a recreation of a WordPress Site made by REDAcademy. Created to display camping gear and inform the visitors of what Inhabitent sells.
@@ -25,6 +24,6 @@ This is a recreation of a WordPress Site made by REDAcademy. Created to display 
     * Taxonomies
     * Plugins
 
+## Personal learning
 
-## License
-This project is licensed under the GPL license.
+Understood how to use PHP and how each page determines what would be displayed. Throughout the project i was able to hone my CSS skills.
