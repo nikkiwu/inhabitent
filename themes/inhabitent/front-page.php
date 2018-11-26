@@ -20,7 +20,7 @@ get_header(); ?>
 
         <section class="container">
 
-            <h1>Shop Stuff</h1>
+            <h1>shop stuff</h1>
 
             <?php
             $terms = get_terms(array(
@@ -90,9 +90,9 @@ get_header(); ?>
                              alt="canoe"/>
                     </div>
                     <div class="adventure-time">
-                        <h3 class="adventure-text">Getting Back to Nature in a Canoe</h3>
+                        <h3 class="adventure-text">getting back to nature in a canoe</h3>
                     </div>
-                    <a class="adventure-button" href="readmore">Read More</a>
+                    <a class="adventure-button" href="readmore">read more</a>
                 </li>
                 <li class="night">
                     <div class="adventure-thumbnail">
@@ -100,9 +100,9 @@ get_header(); ?>
                              alt="beach"/>
                     </div>
                     <div class="adventure-time">
-                        <h3 class="adventure-text">A Night with Friends at the Beach</h3>
+                        <h3 class="adventure-text">a night with friends at the beach</h3>
                     </div>
-                    <a class="adventure-button" href="readmore">Read More</a>
+                    <a class="adventure-button" href="readmore">read more</a>
                 </li>
                 <li class="mountain">
                     <div class="adventure-thumbnail">
@@ -110,9 +110,9 @@ get_header(); ?>
                              alt="hikers"/>
                     </div>
                     <div class="adventure-time">
-                        <h3 class="adventure-text">Taking in the View at Big Mountain</h3>
+                        <h3 class="adventure-text">taking in the view at big mountain</h3>
                     </div>
-                    <a class="adventure-button" href="readmore">Read More</a>
+                    <a class="adventure-button" href="readmore">read more</a>
                 </li>
                 <li class="stars">
                     <div class="adventure-thumbnail">
@@ -120,7 +120,7 @@ get_header(); ?>
                              alt="stars"/>
                     </div>
                     <div class="adventure-time">
-                        <h3 class="adventure-text">Star-Gazing at the Night Sky</h3>
+                        <h3 class="adventure-text">star-gazing at the night sky</h3>
                     </div>
                     <a class="adventure-button" href="readmore">Read More</a>
                 </li>

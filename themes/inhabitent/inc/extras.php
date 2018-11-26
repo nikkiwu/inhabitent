@@ -39,21 +39,12 @@ function filter_login_headerurl($login_header_url)
 add_filter('login_headerurl', 'filter_login_headerurl', 10, 1);
 
 
-// Custom Background
-function custom_login()
-{
-    echo '<link rel="stylesheet" type="text/css" href="' . get_bloginfo('stylesheet_directory') . '/customlogin.css" />';
-}
-
-add_action('login_head', 'custom_login');
-
-
 // Custom Logo
 function inhabitent_login_logo()
 {
     echo '<style type="text/css">                                                                   
          h1 a { background-image:url(' . get_stylesheet_directory_uri() . '/source/logos/inhabitent-logo-text-dark.svg) !important; 
-          width: 410px !important; background-size: 100% !important; margin-left: -60px !important; }                            
+          width: 300px !important; background-size: 100% !important; }                            
      </style>';
 }
 

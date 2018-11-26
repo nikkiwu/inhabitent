@@ -12,7 +12,7 @@ get_header(); ?>
 
             <!-- Product terms -->
             <header id="primary" class="entry-header products-heading">
-                <h1>SHOP STUFF</h1>
+                <h1>shop stuff</h1>
                 <?php
                 $terms = get_terms(array(
                     'taxonomy' => 'product_type',

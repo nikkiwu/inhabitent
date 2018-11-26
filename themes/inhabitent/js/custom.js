@@ -1,38 +1,43 @@
-(function ($) {
-    $(document).ready(function () {
-        $(window).scroll(function () {
-            if ($(this).scrollTop() > 800) {
-                $('.home .main-navigation a').css('color', '#248A83');
-                $('.home .logo-white').css('display', 'none');
-                $('.home .logo-green').css('display', 'inline-block');
-                $('.home .site-header').css('position', 'fixed');
-                $('.home .site-header').css('background', 'rgba(246,246,246,1)');
+jQuery(document).ready(function ($) {
 
-            } else {
-                $('.home .main-navigation a').css('color', 'white');
-                $('.home .logo-green').css('display', 'none');
-                $('.home .logo-white').css('display', 'inline-block');
-                $('.home .site-header').css('border-bottom', 'none');
-                $('.home .site-header').css('position', 'absolute');
-                $('.home .site-header').css('background', 'none');
-            }
-        });
-    })
-})(jQuery);
+    const heroHeight = $('.hero-image').height();
 
+    // add inverse header class to pages with hero image
+    if ($('div').hasClass('hero-image') && $(window).scrollTop() <= heroHeight) {
+        $('header').addClass('header-inverse');
+    }
 
-(function ($) {
-    $(document).ready(function () {
-        $('.search-button').on('click', function () {
-            $('.search-field').addClass('search-show');
-            console.log('search toggle clicked');
-        });
+    // remove inverse header class on scroll
+    $(window).scroll(function () {
+        const scroll = $(window).scrollTop();
 
-        $('.search-field').on('blur', function () {
-            $('.search-field').removeClass('search-show');
-            console.log('blurred');
-        });
+        if (scroll >= heroHeight) {
+            $('header').removeClass('header-inverse');
+        } else {
+            $('header').addClass('header-inverse');
+        }
     });
-})(jQuery);
 
+    // expand search bar in navigation
+    $('.main-navigation').find('.search-form').hide();
 
+    $('.search-button').on('click', function () {
+        $('.main-navigation').find('.search-form').animate({'width': 'toggle'});
+        $('.main-navigation').find('.search-field').focus();
+    });
+
+    $('.main-navigation').find('.search-form').on('focusout', function () {
+        if (!$(this).find('.search-field').val()) {
+            $('.main-navigation').find('.search-form').animate({'width': 'toggle'});
+        }
+    });
+
+    $('.archive-select').change(function () {
+        const url = $(this).val();
+        if (url) {
+            window.location = url;
+        }
+        return false;
+    });
+
+});

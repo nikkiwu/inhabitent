@@ -11,7 +11,7 @@
     <div class="site-info">
         <div class="widget-container">
             <div class="widget-area">
-                <h3>Contact Info</h3>
+                <h3>contact info</h3>
                 <p>
                     <i class="fas fa-envelope fa-lg" aria-hidden="true"></i>
                     <a href="mailto:info@inhabitent.com">info@inhabitent.com</a>
@@ -29,17 +29,17 @@
 
             <div class="footer-block-item">
                 <div class="business-hours">
-                    <h3>Business Hours</h3>
+                    <h3>business hours</h3>
                     <p>
-                        <span class="day-of-week">Monday-Friday:</span>
+                        <span class="day-of-week">monday-friday:</span>
                         9am to 5pm
                     </p>
                     <p>
-                        <span class="day-of-week">Saturday:</span>
+                        <span class="day-of-week">saturday:</span>
                         10am to 2pm
                     </p>
                     <p>
-                        <span class="day-of-week">Sunday:</span>
+                        <span class="day-of-week">sunday:</span>
                         Closed
                     </p>
                 </div>
@@ -49,12 +49,10 @@
         </div>
 
         <div class="footer-logo">
-            <a href="/inhabitent/wordpress" rel="home">
-                <img src= <?php echo esc_url(get_template_directory_uri()) . "/source/logos/inhabitent-logo-text.svg"; ?> alt="Inhabitent
-                     Logo Text"/>
-            </a>
+            <img src= <?php echo esc_url(get_template_directory_uri()) . "/source/logos/inhabitent-logo-text.svg"; ?> alt="Inhabitent
+                 Logo Text"/>
         </div>
-        <div class="copyright">Copyright &copy; 2018 Inhabitent</div>
+        <div class="copyright">copyright &copy; 2018 inhabitent</div>
     </div><!-- .site-info -->
 </footer><!-- #colophon -->
 </div><!-- #page -->

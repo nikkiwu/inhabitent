@@ -232,6 +232,20 @@ th {
   font-weight: normal;
   font-style: normal; }
 
+@font-face {
+  font-family: '.';
+  src: url("../../font/novecento.eot");
+  src: url("../../font/novecento.eot?#iefix") format("embedded-opentype"), url("../../font/novecento.woff2") format("woff2"), url("../../font/novecento.woff") format("woff"), url("../../font/novecento.ttf") format("truetype"), url("../../font/novecento.svg#.") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'novecento-bold';
+  src: url("../../novecento-bold.eot");
+  src: url("../../novecento-bold.eot?#iefix") format("embedded-opentype"), url("../../novecento-bold.woff2") format("woff2"), url("../../novecento-bold.woff") format("woff"), url("../../novecento-bold.ttf") format("truetype"), url("../../novecento-bold.svg#.") format("svg");
+  font-weight: bold;
+  font-style: normal; }
+
 /*--------------------------------------------------------------
 # Typography
 --------------------------------------------------------------*/
@@ -906,6 +920,9 @@ object {
     .site-footer a:hover, .site-footer a:hover:hover, .site-footer a:visited:hover, .site-footer a:active:hover, .site-footer a:focus:hover {
       text-decoration: underline; }
 
+h3 {
+  text-transform: capitalize; }
+
 /* Page layout */
 .site {
   display: -webkit-box;
@@ -1147,6 +1164,8 @@ iframe {
 --------------------------------------------------------------*/
 .site-header {
   width: 100%;
+  background: rgba(255, 255, 255, 0.8);
+  border-bottom: 1px solid #e1e1e1;
   z-index: 100;
   position: fixed;
   overflow: hidden; }
@@ -1168,53 +1187,28 @@ iframe {
   width: 50px;
   height: 50px;
   display: inline-block; }
-  .site-branding .logo-white {
+  .site-branding .site-logo {
+    background: url(../../source/logos/inhabitent-logo-tent.svg) center/50px no-repeat;
     width: 50px;
     height: 50px; }
-    .site-branding .logo-white a {
+    .site-branding .site-logo a {
       display: block;
       width: 50px;
       height: 50px; }
 
-.site-branding {
-  width: 50px;
-  height: 50px;
-  display: inline-block; }
-  .site-branding .logo-green {
-    width: 50px;
-    height: 50px;
-    display: none; }
-    .site-branding .logo-green a {
-      color: #248A83;
-      display: block;
-      width: 50px;
-      height: 50px; }
-
-.blog .site-header a, .logged-in .site-header a, .admin-bar .site-header a, .debug-bar-maximized .site-header a, .customize-support .site-header a {
-  color: #248A83; }
-
-.blog .logo-green, .logged-in .logo-green, .admin-bar .logo-green, .debug-bar-maximized .logo-green, .customize-support .logo-green {
-  display: inline-block; }
-
-.blog .logo-white, .logged-in .logo-white, .admin-bar .logo-white, .debug-bar-maximized .logo-white, .customize-support .logo-white {
-  display: none; }
-
-.search-field {
-  display: none; }
-
-.search-show {
-  display: inline-block;
-  -webkit-transition: 1s linear;
-  transition: 1s linear; }
-
-.page-template .site-header a {
-  color: white; }
-
-.page-template .logo-green {
-  display: none; }
-
-.page-template .logo-white {
-  display: inline-block; }
+.header-inverse {
+  background: transparent;
+  border: 0;
+  position: absolute; }
+  .header-inverse .site-logo {
+    background-image: url(../../source/logos/inhabitent-logo-tent-white.svg); }
+  .header-inverse .search-field {
+    color: #fff !important; }
+  .header-inverse a {
+    color: #fff;
+    text-shadow: 1px 1px 2px #404040; }
+    .header-inverse a:hover, .header-inverse a:focus, .header-inverse a:active {
+      color: #f0e4d1 !important; }
 
 /* Products archive */
 .products-heading {

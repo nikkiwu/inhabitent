@@ -125,4 +125,4 @@ function red_starter_remove_submenus()
     remove_submenu_page('plugins.php', 'plugin-editor.php');
 }
 
-add_action('admin_menu', 'inhabitent_remove_submenus', 110);
+add_action('admin_menu', 'red_starter_remove_submenus', 110);
