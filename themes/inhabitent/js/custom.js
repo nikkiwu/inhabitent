@@ -1,13 +1,12 @@
 jQuery(document).ready(function ($) {
 
+    // Responsive Navbar
     const heroHeight = $('.hero-image').height();
 
-    // add inverse header class to pages with hero image
     if ($('div').hasClass('hero-image') && $(window).scrollTop() <= heroHeight) {
         $('header').addClass('header-inverse');
     }
 
-    // remove inverse header class on scroll
     $(window).scroll(function () {
         const scroll = $(window).scrollTop();
 
@@ -18,7 +17,8 @@ jQuery(document).ready(function ($) {
         }
     });
 
-    // expand search bar in navigation
+
+    // Blur on search
     $('.main-navigation').find('.search-form').hide();
 
     $('.search-button').on('click', function () {
@@ -32,6 +32,7 @@ jQuery(document).ready(function ($) {
         }
     });
 
+    //404 page
     $('.archive-select').change(function () {
         const url = $(this).val();
         if (url) {
