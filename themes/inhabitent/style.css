@@ -1099,7 +1099,7 @@ iframe {
     padding-top: 1.5rem; }
 
 .page-title, .screen-reader-text {
-  display: none; }
+  text-transform: uppercase; }
 
 .home-page .journal-entry-container {
   grid-template-columns: 1fr 1fr 1fr;
@@ -1216,7 +1216,8 @@ iframe {
   border-bottom: 1px dashed #c8c8c8;
   padding-bottom: 1.5rem; }
   .products-heading h1 {
-    margin-bottom: 0; }
+    margin-bottom: 0;
+    text-transform: uppercase; }
   .products-heading .products-navigation {
     font-size: 1.2rem;
     list-style: none;
@@ -1404,7 +1405,7 @@ iframe {
     .comment-body .comment-author cite {
       font-style: normal; }
   .comment-body .comment-metadata {
-    color: #a1a1a1; }
+    color: #808080; }
 
 .comment-list li {
   border-top: 1px solid #e1e1e1; }
