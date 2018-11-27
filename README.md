@@ -1,14 +1,15 @@
-# Project 4 Inhabitent Wordpress site
+# Project 4 Inhabitent
 
-![Inhabitent Screenshot](inhabitent.png)
-
-
-This is a recreation of a WordPress Site made by REDAcademy. Created to display camping gear and inform the visitors of what Inhabitent sells.
+Inhabitent is based on a Vancouver outdoor goods store. With Inhabitent, you are able to purchase or rent items to make your camping experience smoother! Not only does Inhabitent sell outdoor goods, they also offer articles with great information. 
 
 
+
+## Screenshot 
+
+<img src="screenshot/inhabitent.png"  width="1200" height="600">
 
 ## Created By
-* Nikki Wu 
+ Nikki Wu Fall Cohort 2018
 
 ## Used
 * RED Starter Theme
@@ -26,4 +27,8 @@ This is a recreation of a WordPress Site made by REDAcademy. Created to display 
 
 ## Personal learning
 
-Understood how to use PHP and how each page determines what would be displayed. Throughout the project i was able to hone my CSS skills.
+* Practice my PHP 
+* Understand how PHP grabs the .php page depending on the name
+* Extreme detail to CSS and classes in-order to style it
+* JavaScript was a major part for me because i was able to undestand functions a lot more
+* Practice Sass and less DRY 
