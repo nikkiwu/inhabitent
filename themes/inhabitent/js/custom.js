@@ -32,13 +32,4 @@ jQuery(document).ready(function ($) {
         }
     });
 
-    //404 page
-    $('.archive-select').change(function () {
-        const url = $(this).val();
-        if (url) {
-            window.location = url;
-        }
-        return false;
-    });
-
 });
