@@ -4,16 +4,16 @@ jQuery(document).ready(function ($) {
     const heroHeight = $('.hero-image').height();
 
     if ($('div').hasClass('hero-image') && $(window).scrollTop() <= heroHeight) {
-        $('header').addClass('header-inverse');
+        $('header').addClass('header-two');
     }
 
     $(window).scroll(function () {
         const scroll = $(window).scrollTop();
 
         if (scroll >= heroHeight) {
-            $('header').removeClass('header-inverse');
+            $('header').removeClass('header-two');
         } else {
-            $('header').addClass('header-inverse');
+            $('header').addClass('header-two');
         }
     });
 

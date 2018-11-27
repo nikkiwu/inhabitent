@@ -1,17 +1,26 @@
 <?php
-/** Template Name: About Page */
+/**
+ * The template for displaying about page.
+ *
+ * @package Inhabitent_theme
+ */
 get_header(); ?>
-    <div id="primary" class="content-about">
+
+    <div id="primary" class="content-area">
         <main id="main" class="site-main" role="main">
-            <div class="single-page-content">
-                <?php while (have_posts()) :
-                the_post(); ?>
-            </div>
+            <?php while (have_posts()) : the_post(); ?>
+                <div class="hero-image"
+                     style="background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(<?php echo CFS()->get('about_header_image'); ?>)">
+                    <h1 class="hero-heading">
+                        <?php the_title(); ?>
+                    </h1>
+                </div>
 
-            <?php get_template_part('template-parts/content', 'page'); ?>
-
-            <?php endwhile; // End of the loop. ?>
-
+                <div class="single-page-content">
+                    <?php the_content(); ?>
+                </div>
+            <?php endwhile; ?>
         </main><!-- #main -->
     </div><!-- #primary -->
+
 <?php get_footer(); ?>

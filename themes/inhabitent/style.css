@@ -310,6 +310,12 @@ h3 {
 h2, h1 {
   text-transform: uppercase; }
 
+h2 {
+  color: #2f1339; }
+
+p {
+  font-family: Merriweather, serif; }
+
 /*--------------------------------------------------------------
 # Elements
 --------------------------------------------------------------*/
@@ -543,6 +549,7 @@ a {
     text-transform: uppercase;
     padding: 0 0.75rem; }
   .main-navigation a {
+    font-family: Novecento, sans-serif;
     display: block;
     text-decoration: none; }
   .main-navigation .search-button {
@@ -945,7 +952,8 @@ h3 {
   min-height: 100vh; }
   .site .site-content {
     width: 100vw;
-    margin-top: 50px; }
+    margin-top: 50px;
+    padding-bottom: 50px; }
 
 .container {
   width: 1120px;
@@ -995,10 +1003,7 @@ h3 {
 .entry-container {
   display: grid;
   grid-gap: 20px 20px;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  margin: auto;
-  width: 1120px;
-  padding: 30px 0 30px 0; }
+  grid-template-columns: 1fr 1fr 1fr 1fr; }
   .entry-container .entry-post {
     border: 1px solid #e1e1e1; }
     .entry-container .entry-post .entry-thumbnail {
@@ -1050,21 +1055,21 @@ iframe {
   font-size: 3rem;
   text-transform: uppercase; }
 
-.entry-content {
+.single-page-content {
   width: 840px;
   margin: auto; }
-  .entry-content h1 {
+  .single-page-content h1 {
     margin-top: 3rem;
     margin-bottom: 0; }
-  .entry-content h2 {
+  .single-page-content h2 {
     font-size: 2rem;
     text-align: center;
     text-transform: uppercase; }
-  .entry-content p {
+  .single-page-content p {
     font-family: Merriweather, serif; }
-  .entry-content h3 {
+  .single-page-content h3 {
     text-transform: uppercase; }
-  .entry-content .post-author {
+  .single-page-content .post-author {
     text-transform: uppercase;
     font-family: Novecento, sans-serif;
     font-size: 1.2rem; }
@@ -1215,18 +1220,18 @@ iframe {
       width: 50px;
       height: 50px; }
 
-.header-inverse {
+.header-two {
   background: transparent;
   border: 0;
   position: absolute; }
-  .header-inverse .site-logo {
+  .header-two .site-logo {
     background-image: url(../../source/logos/inhabitent-logo-tent-white.svg); }
-  .header-inverse .search-field {
+  .header-two .search-field {
     color: #fff; }
-  .header-inverse a {
+  .header-two a {
     color: #fff;
     text-shadow: 1px 1px 2px #404040; }
-    .header-inverse a:hover, .header-inverse a:focus, .header-inverse a:active {
+    .header-two a:hover, .header-two a:focus, .header-two a:active {
       color: #f0e4d1 !important; }
 
 /* Products archive */
