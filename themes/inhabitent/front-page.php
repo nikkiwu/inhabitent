@@ -91,8 +91,10 @@ get_header(); ?>
                     </div>
                     <div class="adventure-time">
                         <h3 class="adventure-text">getting back to nature in a canoe</h3>
+                        <a class="adventure-button" href="readmore">read more</a>
+
                     </div>
-                    <a class="adventure-button" href="readmore">read more</a>
+
                 </li>
                 <li class="night">
                     <div class="adventure-thumbnail">
@@ -101,8 +103,9 @@ get_header(); ?>
                     </div>
                     <div class="adventure-time">
                         <h3 class="adventure-text">a night with friends at the beach</h3>
+                        <a class="adventure-button" href="readmore">read more</a>
+
                     </div>
-                    <a class="adventure-button" href="readmore">read more</a>
                 </li>
                 <li class="mountain">
                     <div class="adventure-thumbnail">
@@ -111,8 +114,9 @@ get_header(); ?>
                     </div>
                     <div class="adventure-time">
                         <h3 class="adventure-text">taking in the view at big mountain</h3>
+                        <a class="adventure-button" href="readmore">read more</a>
+
                     </div>
-                    <a class="adventure-button" href="readmore">read more</a>
                 </li>
                 <li class="stars">
                     <div class="adventure-thumbnail">
@@ -121,8 +125,8 @@ get_header(); ?>
                     </div>
                     <div class="adventure-time">
                         <h3 class="adventure-text">star-gazing at the night sky</h3>
+                        <a class="adventure-button" href="readmore">read more</a>
                     </div>
-                    <a class="adventure-button" href="readmore">Read More</a>
                 </li>
             </ul>
         </section>

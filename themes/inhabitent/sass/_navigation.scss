@@ -92,15 +92,19 @@ a {
       padding: 0;
       height: 1.75rem;
       display: flex;
-    }
+      ::placeholder {
+        color: $dark-grey;
+        opacity: 1;
+      }
 
-    .search-field {
-      margin-left: $space-unit / 2;
-      background: $light-grey;
-      text-transform: uppercase;
-      border: 0;
-      color: $text-color-main;
-      font-family: $font_family-heading;
+      .search-field {
+        margin-left: $space-unit / 2;
+        background: transparent;
+        text-transform: uppercase;
+        border: 0;
+        font-family: $font_family-heading;
+
+      }
     }
   }
 }
