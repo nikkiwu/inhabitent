@@ -84,6 +84,7 @@ function inhabitent_dynamic_css()
             justify-content: center;
             align-items: center;
             margin-top: -50px;
+            text-transform: uppercase;
         }";
 
     }

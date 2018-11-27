@@ -307,6 +307,9 @@ big {
 h3 {
   font-size: 2rem; }
 
+h2, h1 {
+  text-transform: uppercase; }
+
 /*--------------------------------------------------------------
 # Elements
 --------------------------------------------------------------*/
@@ -1019,7 +1022,7 @@ h3 {
       .entry-container .entry-post .entry-info h2 {
         margin-top: 0;
         font-size: 1.4rem;
-        font-family: novecento-bold,sans-serif; }
+        font-family: novecento-bold, sans-serif; }
         .entry-container .entry-post .entry-info h2 a {
           text-decoration: none; }
 
@@ -1055,13 +1058,19 @@ iframe {
     margin-bottom: 0; }
   .entry-content h2 {
     font-size: 2rem;
-    text-align: center; }
+    text-align: center;
+    text-transform: uppercase; }
   .entry-content p {
     font-family: Merriweather, serif; }
+  .entry-content h3 {
+    text-transform: uppercase; }
   .entry-content .post-author {
     text-transform: uppercase;
     font-family: Novecento, sans-serif;
     font-size: 1.2rem; }
+
+.asterisk {
+  color: red; }
 
 .journal .post {
   margin: 3rem 0; }
