@@ -18,17 +18,18 @@ jQuery(document).ready(function ($) {
     });
 
 
+    const $mainNav = $('.main-navigation');
     // Blur on search
-    $('.main-navigation').find('.search-form').hide();
+    $mainNav.find('.search-form').hide();
 
     $('.search-button').on('click', function () {
-        $('.main-navigation').find('.search-form').animate({'width': 'toggle'});
-        $('.main-navigation').find('.search-field').focus();
+        $mainNav.find('.search-form').animate({'width': 'toggle'});
+        $mainNav.find('.search-field').focus();
     });
 
-    $('.main-navigation').find('.search-form').on('focusout', function () {
+    $mainNav.find('.search-form').on('focusout', function () {
         if (!$(this).find('.search-field').val()) {
-            $('.main-navigation').find('.search-form').animate({'width': 'toggle'});
+            $mainNav.find('.search-form').animate({'width': 'toggle'});
         }
     });
 
